@@ -9,10 +9,10 @@ metadata:
     release: {{ .Release.Name }}
 rules:
   - apiGroups: ["cert-manager.io"]
-    resources: ["certificates", "certificates/status", "certificates/finalizers", "certificaterequests", "certificaterequests/status", "issuers", "clusterissuers"]
+    resources: ["certificates", "certificates/status", "certificates/finalizers", "certificaterequests", "certificaterequests/status", "issuers", "issuers/status", "clusterissuers", "clusterissuers/status"]
     verbs: ["*"]
   - apiGroups: ["acme.cert-manager.io"]
-    resources: ["orders", "orders/finalizers", "challenges"]
+    resources: ["orders", "orders/status", "orders/finalizers", "challenges", "challenges/status"]
     verbs: ["*"]
   - apiGroups: [""]
     resources: ["configmaps", "secrets", "events", "services", "pods"]
